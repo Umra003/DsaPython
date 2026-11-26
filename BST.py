@@ -68,12 +68,12 @@ class BST:
 
         return root
 
-# # FIND MAXIMUM
-#     def find_max(self, root):
-#         if root is None:
-#             return None
+# FIND MAXIMUM
+    def find_max(self, root):
+        if root is None:
+            return None
 
-#         while root.right is not None:
-#             root = root.right
+        while root.right is not None:
+            root = root.right
 
-#         return root
+        return root
