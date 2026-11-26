@@ -51,10 +51,10 @@ class BST:
             self.preorder(root.left)
             self.preorder(root.right)
 
-# # POSTORDER
-#     def postorder(self, root):
-#         if root is not None:
-#             self.postorder(root.left)
-#             self.postorder(root.right)
-#             print(root.data, end=" ")
+# POSTORDER
+    def postorder(self, root):
+        if root is not None:
+            self.postorder(root.left)
+            self.postorder(root.right)
+            print(root.data, end=" ")
 
