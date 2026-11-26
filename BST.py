@@ -58,3 +58,22 @@ class BST:
             self.postorder(root.right)
             print(root.data, end=" ")
 
+# FIND MINIMUM
+    def find_min(self, root):
+        if root is None:
+            return None
+
+        while root.left is not None:
+            root = root.left
+
+        return root
+
+# # FIND MAXIMUM
+#     def find_max(self, root):
+#         if root is None:
+#             return None
+
+#         while root.right is not None:
+#             root = root.right
+
+#         return root
