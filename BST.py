@@ -109,3 +109,27 @@ class BST:
                 root.right = self.delete(root.right, successor.data)
 
         return root
+
+
+    # COUNT TOTAL NODES
+    def count_nodes(self, root):
+        if root is None:
+            return 0
+
+        return (1 + self.count_nodes(root.left)#1 points to the current node.
+                  + self.count_nodes(root.right))
+
+    # COUNT LEFT SUBTREE
+    def count_left_subtree(self, root):
+        if root is None:
+            return 0
+
+        return self.count_nodes(root.left)
+
+    # COUNT RIGHT SUBTREE
+    def count_right_subtree(self, root):
+        if root is None:
+            return 0
+
+        return self.count_nodes(root.right)
+
