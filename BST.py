@@ -44,12 +44,12 @@ class BST:
             print(root.data, end=" ")
             self.inorder(root.right)
 
-# # PREORDER
-#     def preorder(self, root):
-#         if root is not None:
-#             print(root.data, end=" ")
-#             self.preorder(root.left)
-#             self.preorder(root.right)
+# PREORDER
+    def preorder(self, root):
+        if root is not None:
+            print(root.data, end=" ")
+            self.preorder(root.left)
+            self.preorder(root.right)
 
 # # POSTORDER
 #     def postorder(self, root):
