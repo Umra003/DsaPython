@@ -77,3 +77,35 @@ class BST:
             root = root.right
 
         return root
+
+# DELETION
+    def delete(self, root, value):
+        if root is None:
+            return None
+
+        if value < root.data:
+            root.left = self.delete(root.left, value)
+
+        elif value > root.data:
+            root.right = self.delete(root.right, value)
+
+        else:
+            # Case 1: Leaf node
+            if root.left is None and root.right is None:
+                return None
+
+            # Case 2: Only right child
+            elif root.left is None:
+                return root.right
+
+            # Case 2: Only left child
+            elif root.right is None:
+                return root.left
+
+            # Case 3: Two children
+            else:
+                successor = self.find_min(root.right)
+                root.data = successor.data
+                root.right = self.delete(root.right, successor.data)
+
+        return root
