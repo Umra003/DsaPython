@@ -22,3 +22,18 @@ class BST:
             root.right = self.insert(root.right, data)
 
         return root
+
+# SEARCHING
+    def search(self, root, key):
+        if root is None:
+            return False
+
+        if root.data == key:
+            return True
+
+        elif key < root.data:
+            return self.search(root.left, key)
+
+        else:
+            return self.search(root.right, key)
+
