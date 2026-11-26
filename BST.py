@@ -37,3 +37,24 @@ class BST:
         else:
             return self.search(root.right, key)
 
+# INORDER
+    def inorder(self, root):
+        if root is not None:
+            self.inorder(root.left)
+            print(root.data, end=" ")
+            self.inorder(root.right)
+
+# # PREORDER
+#     def preorder(self, root):
+#         if root is not None:
+#             print(root.data, end=" ")
+#             self.preorder(root.left)
+#             self.preorder(root.right)
+
+# # POSTORDER
+#     def postorder(self, root):
+#         if root is not None:
+#             self.postorder(root.left)
+#             self.postorder(root.right)
+#             print(root.data, end=" ")
+
