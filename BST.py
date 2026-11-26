@@ -133,3 +133,27 @@ class BST:
 
         return self.count_nodes(root.right)
 
+# LEVEL-WISE COUNTING
+    def count_level_wise(self, root):
+        if root is None:
+            print("Tree is empty")
+            return
+
+        queue = [root]
+        level = 0
+
+        while queue:
+            level_count = len(queue)
+
+            print("Level", level, ":", level_count, "nodes")
+
+            for i in range(level_count):
+                node = queue.pop(0)
+
+                if node.left is not None:
+                    queue.append(node.left)
+
+                if node.right is not None:
+                    queue.append(node.right)
+
+            level += 1
