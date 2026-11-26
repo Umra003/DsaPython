@@ -157,3 +157,104 @@ class BST:
                     queue.append(node.right)
 
             level += 1
+
+# MAIN PROGRAM
+
+tree = BST()
+
+n = int(input("How many nodes do you want to insert? "))
+
+for i in range(n):
+    value = int(input("Enter node value: "))
+    tree.root = tree.insert(tree.root, value)
+
+
+while True:
+
+    print("\n----- BST OPERATIONS -----")
+    print("1. Insert")
+    print("2. Search")
+    print("3. Inorder Traversal")
+    print("4. Preorder Traversal")
+    print("5. Postorder Traversal")
+    print("6. Delete")
+    print("7. Count Total Nodes")
+    print("8. Count Left Subtree Nodes")
+    print("9. Count Right Subtree Nodes")
+    print("10. Count Nodes Level-wise")
+    print("11. Find Minimum")
+    print("12. Find Maximum")
+    print("13. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        value = int(input("Enter value to insert: "))
+        tree.root = tree.insert(tree.root, value)
+        print("Node inserted successfully")
+
+    elif choice == 2:
+        key = int(input("Enter value to search: "))
+
+        if tree.search(tree.root, key):
+            print("Value found")
+        else:
+            print("Value not found")
+
+    elif choice == 3:
+        print("Inorder:")
+        tree.inorder(tree.root)
+        print()
+
+    elif choice == 4:
+        print("Preorder:")
+        tree.preorder(tree.root)
+        print()
+
+    elif choice == 5:
+        print("Postorder:")
+        tree.postorder(tree.root)
+        print()
+
+    elif choice == 6:
+        value = int(input("Enter value to delete: "))
+        tree.root = tree.delete(tree.root, value)
+        print("Deletion operation completed")
+
+    elif choice == 7:
+        print("Total nodes:", tree.count_nodes(tree.root))
+
+    elif choice == 8:
+        print("Left subtree nodes:",
+              tree.count_left_subtree(tree.root))
+
+    elif choice == 9:
+        print("Right subtree nodes:",
+              tree.count_right_subtree(tree.root))
+
+    elif choice == 10:
+        tree.count_level_wise(tree.root)
+
+    elif choice == 11:
+        result = tree.find_min(tree.root)
+
+        if result is None:
+            print("Tree is empty")
+        else:
+            print("Minimum value:", result.data)
+
+    elif choice == 12:
+        result = tree.find_max(tree.root)
+
+        if result is None:
+            print("Tree is empty")
+        else:
+            print("Maximum value:", result.data)
+
+    elif choice == 13:
+        print("Exiting program...")
+        break
+
+    else:
+        print("Invalid choice")
+
