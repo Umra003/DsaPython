@@ -7,13 +7,13 @@ class Queue:
         print(value, "inserted into queue")
 
     def dequeue(self):
-        if not self.queue:
+        if not self.queue:  ##if len(self.queue) == 0:
             print("Queue Underflow")
         else:
             print("Deleted element:", self.queue.pop(0))
 
     def display(self):
-        if not self.queue:
+        if not self.queue: #if len(self.queue) == 0:
             print("Queue is empty")
         else:
             print("Queue:", self.queue)
