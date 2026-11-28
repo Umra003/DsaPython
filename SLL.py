@@ -82,23 +82,25 @@ class SinglyLinkedList:
 
 
     # 5. Delete from end
-    def delete_end(self):
-        if self.head is None:
-            print("Linked List is empty")
-            return
+def delete_end(self):
+    if self.head is None:
+        print("Linked List is empty")
+        return
 
-        if self.head.next is None:
-            print("Deleted node:", self.head.data)
-            self.head = None
-            return
+    if self.head.next is None:
+        print("Deleted node:", self.head.data)
+        self.head = None
+        return
 
-        temp = self.head
+    temp = self.head
+    prev = None
 
-        while temp.next.next is not None:
-            temp = temp.next
+    while temp.next is not None:
+        prev = temp
+        temp = temp.next
 
-        print("Deleted node:", temp.next.data)
-        temp.next = None
+    print("Deleted node:", temp.data)
+    prev.next = None
 
 
     # 6. Delete from a given position
